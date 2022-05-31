@@ -16,6 +16,11 @@ router
     .route('/')
     .get(getAllThought)
     .post(createThought);
+    
+// api/thoughts/:thoughtId/reactions
+    router
+        .route('/:thoughtId/:reactionsId')
+        .post(createReaction);
 
 //get by id, update /api/thoughts/:id
 router
@@ -24,10 +29,6 @@ router
     .put(updateThought)
     .delete(deleteThought);
 
-// api/thoughts/:thoughtId/reactions
-router
-    .route('/:thoughtId/:reactionsId')
-    .post(createReaction);
 
 // api/thoughts/:thoughtId/reactions/:reactionId
 router
